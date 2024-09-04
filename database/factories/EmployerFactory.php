@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,15 @@ class EmployerFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => User::factory(),
+            'name' => $this->faker->company,
+            'logo' => $this->faker->imageUrl(100, 100, 'business', true, 'Faker'), // Generates a fake image URL for logo
+            'email' => $this->faker->unique()->companyEmail,
+            'phone' => $this->faker->phoneNumber,
+            'address' => $this->faker->address,
+            'company_name' => $this->faker->company,
+            'website' => $this->faker->url,
+            'is_active' => $this->faker->boolean(90), // 90% chance to be true
         ];
     }
 }

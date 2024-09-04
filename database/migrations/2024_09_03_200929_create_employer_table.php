@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->string('name'); // Employer's name
+            $table->string('logo');
             $table->string('email')->unique(); // Employer's email, must be unique
             $table->string('phone')->nullable(); // Employer's phone number, optional
             $table->string('address')->nullable(); // Employer's address, optional

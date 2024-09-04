@@ -13,25 +13,18 @@
         <section>
             <x-section-heading>Featured Jobs</x-section-heading>
             <div class="grid lg:grid-cols-3 gap-8 mt-6">
-                <x-job-card></x-job-card>
-                <x-job-card></x-job-card>
-                <x-job-card></x-job-card>
+                @foreach ($featured as $job)
+                    <x-job-card :job="$job" />
+                @endforeach
             </div>
         </section>
 
         <section>
             <x-section-heading>Tags</x-section-heading>
             <div class="mt-6 space-x-3">
-                <x-tags size="base">Tag 1</x-tags>
-                <x-tags size="base">Tag 2</x-tags>
-                <x-tags size="base">Tag 3</x-tags>
-                <x-tags size="base">Tag 4</x-tags>
-                <x-tags size="base">Tag 5</x-tags>
-                <x-tags size="base">Tag 6</x-tags>
-                <x-tags size="base">Tag 7</x-tags>
-                <x-tags size="base">Tag 8</x-tags>
-                <x-tags size="base">Tag 9</x-tags>
-                <x-tags size="base">Tag 10</x-tags>
+                @foreach ($tags as $tag)
+                    <x-tags size="base" :tag="$tag" />
+                @endforeach
             </div>
         </section>
 
@@ -39,9 +32,9 @@
         <section>
             <x-section-heading>Recent Jobs</x-section-heading>
             <div class="mt-6 space-y-6">
-                <x-job-card-wide />
-                <x-job-card-wide />
-                <x-job-card-wide />
+                @foreach ($jobs as $job)
+                    <x-job-card-wide :job="$job" />
+                @endforeach
             </div>
 
         </section>
