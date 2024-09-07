@@ -34,7 +34,12 @@
                 <div class="space-x-6 font-bold flex">
                     <a href="/jobs/create">Post a Job</a>
 
-                    <button>Log Out</button>
+                    <form method="POST" action="/logout">
+                        @csrf
+                        @method('DELETE')
+
+                        <button>Log Out</button>
+                    </form>
                 </div>
             @endauth
 

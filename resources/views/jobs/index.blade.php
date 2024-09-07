@@ -4,8 +4,8 @@
 
         <section class="text-center">
             <h1 class="text-4xl font-bold mb-6">Let's find your next Job</h1>
-            <form>
-                <input type="text" class="rounded-xl bg-white/5 border-white/10 px-5 py-4 w-full max-w-xl" placeholder="Web Developer..." />
+            <form action="/search" method="GET">
+                <input type="text" name="q" class="rounded-xl bg-white/5 border-white/10 px-5 py-4 w-full max-w-xl" placeholder="Web Developer..." />
             </form>
         </section>
 
